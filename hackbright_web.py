@@ -59,10 +59,13 @@ def get_project():
 
     title, description, max_grade = hackbright.get_project_by_title(title)
 
+    grades = hackbright.get_grades_by_title(title)
+
     return render_template("project_information.html",
                             title=title,
                             description=description,
-                            max_grade=max_grade)
+                            max_grade=max_grade,
+                            grades=grades)
 
 if __name__ == "__main__":
     hackbright.connect_to_db(app)

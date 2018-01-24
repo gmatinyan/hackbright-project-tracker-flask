@@ -92,6 +92,7 @@ def get_grade_by_github_title(github, title):
     db_cursor = db.session.execute(QUERY, {'github': github, 'title': title})
 
     row = db_cursor.fetchone()
+    print 'row:', row
 
     print "Student {acct} in project {title} received grade of {grade}".format(
         acct=github, title=title, grade=row[0])
